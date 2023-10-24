@@ -7,46 +7,54 @@
             Title thing
         </title>
 
-    </head>
+    </head>  
     <body>
-        <h1>
-            help how to CSS
-        </h1>
-        <b>Compatibility Checker</b>
-
-        <div class="container">
-            <div class="field">
-                <article>
-                    <div>
-                        <input type="text" name="MagicWord" id="MAGIC" placeholder="Magic Word" required>
-                    </div>
-                    <div>
-                        <input type="text" name="name1" id="nm1" placeholder="First name" required>
-                        <input type="text" name="name2" id="nm2" placeholder="Second name" required>
-                    </div>
-                    <div>
-                        <input button type="submit" id="submit"></button>
-                    </div>
-                    <div>
-                        <p class="output" id="otpt"></p>
-                    </div>
-                </article>
-
-                <script type="text/javascript" src="CompatibilityMatch.js">
-                    const magic_word = document.getElementById('MAGIC');
-                    const name1  = document.getElementById('nm1');
-                    const name2  = document.getElementById('nm2');
-                    const button = document.getElementById('submit');
-                    const output  = document.getElementById('otpt');
-
-                    function submission()
-                    {
-                        output.innterHTML = toString(CalculateCompatibility(name1.value, name2.value, GetBasePoint(magic_word.value)) * 100.0);
-                    }
-
-                    button.addEventListener('click', submission);
-                </script>
+        <article>
+            <h1>
+                help how to CSS
+            </h1>
+            <b>Compatibility Checker</b>
+            <div class="container">
+                <div class="field">
+                    <article>
+                        <div>
+                            <input type="text" name="MagicWord" id="MAGIC" placeholder="Magic Word" required>
+                        </div>
+                        <div>
+                            <input type="text" name="name1" id="nm1" placeholder="First person" required>
+                            <input type="text" name="name2" id="nm2" placeholder="Second person" required>
+                        </div>
+                        <div>
+                            <input type="button" id="sbmt" value="Submit"></input>
+                        </div>
+                        <div>
+                            <p class="output" id="otpt"></p>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
+        </article>
+
+        <script type="text/javascript" src="CompatibilityMatch.js">
+            const magic_word = document.getElementById("MAGIC");
+            const name1  = document.getElementById("nm1");
+            const name2  = document.getElementById("nm2");
+            const button = document.getElementById("sbmt");
+            const output  = document.getElementById("otpt");
+            let result;
+    
+            function submission()
+            {
+                result = toString(CalculateCompatibility(name1.value, name2.value, GetBasePoint(magic_word.value)) * 100.0)
+                <!--
+                output.innterHTML = result;
+                -->
+
+                console.log(result);
+            }
+    
+            button.addEventListener('click', submission);
+        </script>
     </body>
+    
 </html>
