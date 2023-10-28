@@ -4,7 +4,7 @@ function GetBasePoint(magic_word)
 
     for (let i = 0; i < magic_word.length; i++)
     {
-        base_point += parseInt(magic_word.charCodeAt(i));
+        base_point += magic_word.charCodeAt(i);
     }
 
     return base_point;
@@ -20,12 +20,12 @@ function CalculateCompatibility(name1, name2, base_point)
 
     for (let i = 0; i < name1.length; i++)
     {
-        name1_point += parseInt(name1.charCodeAt(i));
+        name1_point += name1.charCodeAt(i);
     }
 
     for (let i = 0; i < name2.length; i++)
     {
-        name2_point += parseInt(name2.charCodeAt(i));
+        name2_point += name2.charCodeAt(i);
     }
 
     let point_sum = name1_point + name2_point;
@@ -33,11 +33,6 @@ function CalculateCompatibility(name1, name2, base_point)
     let higher = Math.max(point_sum, base_point);
     let lower = Math.min(point_sum, base_point);
 
-    if (higher % lower)
-    {
-        return 1.0;
-    }
-
-    return parseFloat(point_sum % base_point) / parseFloat(base_point);
+    return (((higher % lower) / (base_point)) * 100.0).toFixed(2) + "%";
 }
 
