@@ -35,9 +35,9 @@ function CalculateCompatibility(name1, name2, base_point)
 
     if (higher % lower)
     {
-        return 1.0
+        return 1.0;
     }
 
-    return parseFloat(point_sum % base_point) / parseFloat(base_point)
+    return parseFloat(point_sum % base_point) / parseFloat(base_point);
 }
 
