@@ -12,6 +12,11 @@ function GetBasePoint(magic_word)
 
 function CalculateCompatibility(name1, name2, base_point)
 {
+    if (name1 == "" || name2 == "" || base_point == 0)
+    {
+        return "Missing info";
+    }
+
     let name1_point = 0;
     let name2_point = 0;
 
